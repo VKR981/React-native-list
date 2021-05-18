@@ -7,15 +7,11 @@ import {
   FlatList,
   SafeAreaView,
   StatusBar,
-  Touchable,
   TouchableOpacity,
-  Alert,
-  Modal,
-  TouchableHighlight,
 } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
-import { Ionicons, Feather, AntDesign } from "@expo/vector-icons";
+import { Feather, AntDesign } from "@expo/vector-icons";
 
 const DATA = ["🍌 banana", "🍏 apple", "🍉 watermelon"];
 
@@ -31,7 +27,6 @@ export default function App() {
   const [list, setList] = useState<ItemType[]>([]);
   const [filteredList, setFilteredList] = useState<ItemType[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     const initialList = DATA.map((item) => ({
